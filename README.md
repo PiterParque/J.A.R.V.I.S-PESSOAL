@@ -113,6 +113,3 @@ Obrigado por dar uma olhada!
 
 Feito por **NICOLAS LANÇA** | [LinkedIn](https://www.linkedin.com/in/nicolas-lanca)
 
-## Licença
-
-Defina uma licença (por exemplo, MIT) e adicione o arquivo `LICENSE`.
