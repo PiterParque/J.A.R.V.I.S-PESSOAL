@@ -1,5 +1,24 @@
+# Ambientes virtuais
 venv/
 .venv/
+
+# Cache e arquivos compilados do Python
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+
+# Variáveis de ambiente e credenciais
 .env
+.env.*
+!.env.example
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Banco de dados local da memória
+# Remova esta regra se quiser versionar uma base de dados de exemplo.
+data/memoria_jarvis.db
