@@ -245,7 +245,7 @@ O módulo `memoria.py` utiliza SQLite para armazenar informações em `data/memo
 O assistente pode receber comandos explícitos, como:
 
 ```text
-Jarvis, lembre-se de que meu projeto principal é a Prinva.
+Jarvis, lembre-se de que estou estudando Python.
 ```
 
 Também são aceitas as formas "lembre que", "guarde que" e "anote que".
@@ -271,22 +271,19 @@ Os documentos ficam na pasta `contexto/`, em arquivos `.md` ou `.txt`:
 
 - `CONTEXTO_PRINCIPAL.md`: informações gerais, preferências de interação e informações duradouras relevantes.
 - `INVENTARIO_TECNICO_PROJETOS.md`: projetos, tecnologias, estrutura dos repositórios, configurações importantes e pendências.
-- `SITE_PRINVA.md`: gerado pelo coletor, com o conteúdo público do site da Prinva.
-- `LINKEDIN.md`: preenchido manualmente, com informações do perfil profissional.
 
 Esses arquivos são mantidos por você. O Jarvis apenas lê os documentos, e não os altera.
 
 ### Atualização do contexto público
 
-O script `coletor_contexto.py` atualiza o contexto a partir de páginas públicas:
+O script `coletor_contexto.py` atualiza o contexto a partir de páginas públicas configuradas no próprio script:
 
 ```powershell
 python coletor_contexto.py
 ```
 
-- Baixa as páginas listadas em `PAGINAS_PRINVA`, aceitando somente HTTPS e o domínio `prinva.com.br`, com limite de 2 MB por página.
-- Extrai o texto e grava `contexto/SITE_PRINVA.md`. Se nenhuma página puder ser coletada, o arquivo anterior é preservado.
-- Se `contexto/LINKEDIN.md` não existir, cria um modelo para preenchimento manual. O script não faz login nem coleta dados do LinkedIn.
+- Baixa somente páginas HTTPS de um domínio permitido, com limite de 2 MB por página.
+- Extrai o texto e grava um arquivo Markdown na pasta `contexto/`. Se nenhuma página puder ser coletada, o arquivo anterior é preservado.
 - Registra a execução em `logs/coletor_contexto.log`.
 
 ### Boas práticas ao manter os arquivos
